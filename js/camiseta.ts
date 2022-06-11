@@ -1,4 +1,4 @@
-// Interfaz
+// Interfaz || Interface
 interface CamisetaBase{
     setColor(color);
     getColor();
@@ -16,35 +16,35 @@ class Camiseta implements CamisetaBase{
     // private solo permite el acceso a estas propiedades desde la misma clase por lo que 
     // tenemos que crear un metodo para acceder a dichas propiedades y manipularlas
     // METODOS (funciones o acciones del objeto)[setters y getters]
-    public setColor(color){
+    public setColor(color: string){
         this.color = color;
     }
     // el getter recoje el valor de la propiedad
-    public getColor(){
+    public getColor():string{
         return this.color;
     }
-    public getModelo(){
+    public getModelo():string{
         return this.modelo;
     }
-    public setModelo(modelo){
+    public setModelo(modelo: string){
         this.modelo = modelo;
     }
-    public getMarca(){
+    public getMarca():string{
         return this.marca;
     }
-    public setMarca(marca){
+    public setMarca(marca: string){
         this.marca = marca;
     }
-    public getTalla(){
+    public getTalla():string{
         return this.talla;
     }
-    public setTalla(talla){
+    public setTalla(talla: string){
         this.talla = talla;
     }
-    public getPrecio(){
+    public getPrecio():number{
         return this.precio;
     }
-    public setPrecio(precio){
+    public setPrecio(precio: number){
         this.precio = precio;
     }
     // Constructores
@@ -57,6 +57,31 @@ class Camiseta implements CamisetaBase{
     }
 
 }
+
+// Clase hija
+
+class Sudadera extends Camiseta{
+
+    private capucha: boolean;
+
+    setCapucha(capucha: boolean){
+        this.capucha = capucha;
+    }
+    getCapucha():boolean{
+        return this.capucha
+    }
+    // tienes que volver a declarar las variables para capturarlas y pasarlas al superClass del constructor.
+    constructor(capucha: boolean, color:String, modelo:string, marca:string, talla:string, precio:number){
+        super(color,modelo,marca,talla,precio);
+        this.capucha = capucha;
+    }
+
+
+}
+
+var sudaderaNike = new Sudadera('rojo','larga','nike','L',12,false);
+
+console.log(sudaderaNike)
 
 // si las propiedades de la clase son privadas.
     var camiseta = new Camiseta('azul','nike','corta',10,'M');
