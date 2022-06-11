@@ -20,8 +20,8 @@ class Camiseta{
     public getModelo(){
         return this.modelo;
     }
-    public setModelo(color){
-        this.color = color;
+    public setModelo(modelo){
+        this.modelo = modelo;
     }
     public getMarca(){
         return this.marca;
@@ -41,9 +41,22 @@ class Camiseta{
     public setPrecio(precio){
         this.precio = precio;
     }
+    // Constructores
+    constructor(color,modelo, marca, talla, precio){
+        this.color = color;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.talla = talla;
+        this.precio = precio;
+    }
+
 }
+
 // si las propiedades de la clase son privadas.
-    var camiseta = new Camiseta();
+    var camiseta = new Camiseta('azul','nike','corta',10,'M');
+    console.log(camiseta);
+    console.log(camiseta.getColor())
+
     camiseta.setColor('rojo');
     camiseta.setMarca('Addidas');
     camiseta.setModelo('Larga');

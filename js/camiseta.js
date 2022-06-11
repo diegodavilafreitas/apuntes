@@ -1,6 +1,12 @@
 // clase (molde del objeto)[la clase debería llevar el mismo nombre que el fichero]
 var Camiseta = /** @class */ (function () {
-    function Camiseta() {
+    // Constructores
+    function Camiseta(color, modelo, marca, talla, precio) {
+        this.color = color;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.talla = talla;
+        this.precio = precio;
     }
     // private solo permite el acceso a estas propiedades desde la misma clase por lo que 
     // tenemos que crear un metodo para acceder a dichas propiedades y manipularlas
@@ -15,8 +21,8 @@ var Camiseta = /** @class */ (function () {
     Camiseta.prototype.getModelo = function () {
         return this.modelo;
     };
-    Camiseta.prototype.setModelo = function (color) {
-        this.color = color;
+    Camiseta.prototype.setModelo = function (modelo) {
+        this.modelo = modelo;
     };
     Camiseta.prototype.getMarca = function () {
         return this.marca;
@@ -39,7 +45,9 @@ var Camiseta = /** @class */ (function () {
     return Camiseta;
 }());
 // si las propiedades de la clase son privadas.
-var camiseta = new Camiseta();
+var camiseta = new Camiseta('azul', 'nike', 'corta', 10, 'M');
+console.log(camiseta);
+console.log(camiseta.getColor());
 camiseta.setColor('rojo');
 camiseta.setMarca('Addidas');
 camiseta.setModelo('Larga');
