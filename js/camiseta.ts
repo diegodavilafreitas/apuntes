@@ -11,16 +11,44 @@ class Camiseta{
     // tenemos que crear un metodo para acceder a dichas propiedades y manipularlas
     // METODOS (funciones o acciones del objeto)[setters y getters]
     public setColor(color){
-        this.color = color
+        this.color = color;
     }
     // el getter recoje el valor de la propiedad
     public getColor(){
-        return this.color
+        return this.color;
+    }
+    public getModelo(){
+        return this.modelo;
+    }
+    public setModelo(color){
+        this.color = color;
+    }
+    public getMarca(){
+        return this.marca;
+    }
+    public setMarca(marca){
+        this.marca = marca;
+    }
+    public getTalla(){
+        return this.talla;
+    }
+    public setTalla(talla){
+        this.talla = talla;
+    }
+    public getPrecio(){
+        return this.precio;
+    }
+    public setPrecio(precio){
+        this.precio = precio;
     }
 }
 // si las propiedades de la clase son privadas.
     var camiseta = new Camiseta();
     camiseta.setColor('rojo');
+    camiseta.setMarca('Addidas');
+    camiseta.setModelo('Larga');
+    camiseta.setPrecio(12);
+    camiseta.setTalla('L');
 // si las propiedades de la clase fueras publicas.
 /*
 var camiseta = new Camiseta();

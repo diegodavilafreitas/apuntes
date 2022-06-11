@@ -12,11 +12,39 @@ var Camiseta = /** @class */ (function () {
     Camiseta.prototype.getColor = function () {
         return this.color;
     };
+    Camiseta.prototype.getModelo = function () {
+        return this.modelo;
+    };
+    Camiseta.prototype.setModelo = function (color) {
+        this.color = color;
+    };
+    Camiseta.prototype.getMarca = function () {
+        return this.marca;
+    };
+    Camiseta.prototype.setMarca = function (marca) {
+        this.marca = marca;
+    };
+    Camiseta.prototype.getTalla = function () {
+        return this.talla;
+    };
+    Camiseta.prototype.setTalla = function (talla) {
+        this.talla = talla;
+    };
+    Camiseta.prototype.getPrecio = function () {
+        return this.precio;
+    };
+    Camiseta.prototype.setPrecio = function (precio) {
+        this.precio = precio;
+    };
     return Camiseta;
 }());
 // si las propiedades de la clase son privadas.
 var camiseta = new Camiseta();
 camiseta.setColor('rojo');
+camiseta.setMarca('Addidas');
+camiseta.setModelo('Larga');
+camiseta.setPrecio(12);
+camiseta.setTalla('L');
 // si las propiedades de la clase fueras publicas.
 /*
 var camiseta = new Camiseta();
