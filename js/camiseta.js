@@ -13,6 +13,20 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+// Decorador
+function estampar(logo) {
+    return function (target) {
+        target.prototype.estampacion = function () {
+            console.log('camiseta estampada con el logo de ' + logo);
+        };
+    };
+}
 // clase (molde del objeto)[la clase debería llevar el mismo nombre que el fichero]
 var Camiseta = /** @class */ (function () {
     // Constructores
@@ -57,6 +71,9 @@ var Camiseta = /** @class */ (function () {
     Camiseta.prototype.setPrecio = function (precio) {
         this.precio = precio;
     };
+    Camiseta = __decorate([
+        estampar('batman')
+    ], Camiseta);
     return Camiseta;
 }());
 // Clase hija
@@ -76,7 +93,7 @@ var Sudadera = /** @class */ (function (_super) {
     };
     return Sudadera;
 }(Camiseta));
-var sudaderaNike = new Sudadera('rojo', 'larga', 'nike', 'L', 12, false);
+var sudaderaNike = new Sudadera(false, 'rojo', 'larga', 'nike', 'L', 12);
 console.log(sudaderaNike);
 // si las propiedades de la clase son privadas.
 var camiseta = new Camiseta('azul', 'nike', 'corta', 10, 'M');
@@ -88,6 +105,7 @@ camiseta.setModelo('Larga');
 camiseta.setPrecio(12);
 camiseta.setTalla('L');
 // si las propiedades de la clase fueras publicas.
+camiseta.estamacion();
 /*
 var camiseta = new Camiseta();
 camiseta.color = 'azul';

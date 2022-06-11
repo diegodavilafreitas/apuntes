@@ -4,7 +4,16 @@ interface CamisetaBase{
     getColor();
 }
 
+// Decorador
+function estampar(logo:string){
+    return function(target: Function){
+        target.prototype.estampacion = function():void{
+            console.log('camiseta estampada con el logo de '+logo);
+        }
+    }
+}
 // clase (molde del objeto)[la clase debería llevar el mismo nombre que el fichero]
+@estampar('batman')
 class Camiseta implements CamisetaBase{
     // propiedades (caracteristicas del objeto)
     private color: string;
@@ -79,7 +88,7 @@ class Sudadera extends Camiseta{
 
 }
 
-var sudaderaNike = new Sudadera('rojo','larga','nike','L',12,false);
+var sudaderaNike = new Sudadera(false,'rojo','larga','nike','L',12);
 
 console.log(sudaderaNike)
 
@@ -94,6 +103,8 @@ console.log(sudaderaNike)
     camiseta.setPrecio(12);
     camiseta.setTalla('L');
 // si las propiedades de la clase fueras publicas.
+    camiseta.estamacion();
+
 /*
 var camiseta = new Camiseta();
 camiseta.color = 'azul';
