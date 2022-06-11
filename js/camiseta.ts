@@ -1,5 +1,11 @@
+// Interfaz
+interface CamisetaBase{
+    setColor(color);
+    getColor();
+}
+
 // clase (molde del objeto)[la clase debería llevar el mismo nombre que el fichero]
-export class Camiseta{
+class Camiseta implements CamisetaBase{
     // propiedades (caracteristicas del objeto)
     private color: string;
     private modelo: string;

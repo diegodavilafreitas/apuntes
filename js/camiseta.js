@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.Camiseta = void 0;
 // clase (molde del objeto)[la clase debería llevar el mismo nombre que el fichero]
 var Camiseta = /** @class */ (function () {
     // Constructores
@@ -47,7 +44,6 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-exports.Camiseta = Camiseta;
 // si las propiedades de la clase son privadas.
 var camiseta = new Camiseta('azul', 'nike', 'corta', 10, 'M');
 console.log(camiseta);
