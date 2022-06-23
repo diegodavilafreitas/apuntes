@@ -1,7 +1,10 @@
 <div>
-  <h1><span> App en Angular de {{ name }} {{ scndName }}</span></h1>
+  <h1 style="background-color: {{colorTitulos}}"><span> App en Angular de {{ name }} {{ scndName }}</span></h1>
+  <h1><span>{{title}}</span></h1>
+  <h3><span>{{description}}</span></h3>
    
-    <button (click)="ocultarVideojuego()">Ocultar</button>
+      <button (click)="ocultarVideojuego(false)" *ngIf="mostrarVideojuego">Ocultar</button>
+      <button (click)="ocultarVideojuego(true)" *ngIf="!mostrarVideojuego">Mostrar</button>
   
     <videojuego *ngIf="mostrarVideojuego"></videojuego>
     <zapatillas></zapatillas>
