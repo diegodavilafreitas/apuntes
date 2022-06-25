@@ -11,8 +11,10 @@ export class ZapatillasComponent implements OnInit{
     public zapatillas: Array<Zapatilla>;
     public marcas: String[];
     public color: String;
+    public miMarca: String;
 
     constructor(){
+        this.miMarca = 'Fila'
         this.color = 'orange'
         this.marcas = new Array;
         this.zapatillas = [
@@ -34,11 +36,16 @@ export class ZapatillasComponent implements OnInit{
             if(!this.marcas.includes(element.marca)){
                 this.marcas.push(element.marca);
             }
-            
         });
         console.log(this.marcas)
-
     }
 
+    getMarca(){
+        alert('La marca es: '+this.miMarca);
+    }
+
+    addMarca(){
+        this.marcas.push(this.miMarca);
+    }
 
 }
