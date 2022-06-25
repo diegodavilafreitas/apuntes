@@ -7,23 +7,22 @@
 
 <p>{{miMarca}}</p>
 <p>Compra las zapas de las macas: </p>
-<span *ngFor="let marca of marcas; let i = index">{{marca}} </span>
+<ul>
+    <li *ngFor="let marca of marcas; let i = index">
+            {{i+' - '+marca}}
+            <button (click)="borrarMarca(i)">RM</button>
+    </li>
+</ul>
+
 <ul>
     <li *ngFor="let zapa of zapatillas; let i = index">
         <span [ngStyle]="{'text-decoration' : !zapa.stock ? 'line-through' : 'none'}">
             {{i+' - '+zapa.nombre}} - <strong>{{zapa.precio}}</strong>
         </span>
-        <span *ngIf="zapa.precio<=100"
-        [style.color]="zapa.precio <= 100 ? 'green' : 'transparent'"
-        > !En Oferta¡</span>
-        <span *ngIf="zapa.precio > 100"
-        [style.color]="zapa.precio > 100 ? 'red' : 'transparent'"
-        > !Sin oferta¡</span>
-        
-
-
+        <span *ngIf="zapa.precio<=100" [style.color]="zapa.precio <= 100 ? 'green' : 'transparent'"> !En Oferta¡</span>
+        <span *ngIf="zapa.precio > 100" [style.color]="zapa.precio > 100 ? 'red' : 'transparent'"> !Sin oferta¡</span>
     </li>
-</ul>   
+</ul>
 
 <p>El coloe de la mayoria de nuestras zapatillas es: </p>
 
@@ -42,5 +41,5 @@
     <li *ngSwitchCase="'orange'">
         El color predominante es el <span [ngStyle]="{'background':color}">orange</span>
     </li>
-    
+
 </ul>

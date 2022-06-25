@@ -48,4 +48,9 @@ export class ZapatillasComponent implements OnInit{
         this.marcas.push(this.miMarca);
     }
 
+    borrarMarca(i:number){
+        //delete this.marcas[i];
+        this.marcas.splice(i,1);
+    }
+
 }
