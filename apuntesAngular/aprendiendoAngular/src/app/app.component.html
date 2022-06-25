@@ -1,14 +1,21 @@
-<div>
-  <h1 style="background-color: {{colorTitulos}}"><span> App en Angular de {{ name }} {{ scndName }}</span></h1>
-  <h1><span>{{title}}</span></h1>
+<div [ngStyle]="{
+                  'background':config.fondo,
+                  'padding':'20px',
+                  'border':'5px solid',
+                  'border-color':config.color
+                }">
+  <h1 [ngStyle]="{'background': config.color}" ><span> App en Angular de {{ name }} {{ scndName }}</span></h1>
+  <!--<h1><span>{{title}}</span></h1>
   <h3><span>{{description}}</span></h3>
    
       <button (click)="ocultarVideojuego(false)" *ngIf="mostrarVideojuego">Ocultar</button>
       <button (click)="ocultarVideojuego(true)" *ngIf="!mostrarVideojuego">Mostrar</button>
   
     <videojuego *ngIf="mostrarVideojuego"></videojuego>
-    <zapatillas></zapatillas>
     <cursos></cursos>
+  -->
+    <zapatillas></zapatillas>
+    
 
 
 

@@ -13,11 +13,12 @@ export class AppComponent {
   name = 'Diego';
   scndName = 'Davila Freitas';
   mostrarVideojuego: boolean = true;
+  public config;
 
   constructor(){
+    this.config = Configuración;
     this.title = Configuración.titulo;
     this.description = Configuración.descripcion;
-    this.colorTitulos = Configuración.color;
   }
 
   ocultarVideojuego(estado: boolean){

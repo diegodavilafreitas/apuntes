@@ -1,6 +1,6 @@
 export var Configuración = ({
-    color:'red',
-    fondo: 'blue',
+    color:'#b32f',
+    fondo: '#ccc',
     titulo: 'Aplicación con Angular',
     descripcion: 'Esto es una aplicación desarrollada en Angular'
 });
