@@ -10,8 +10,10 @@ export class ZapatillasComponent implements OnInit{
     public titulo: String ='Componente zapatillas';
     public zapatillas: Array<Zapatilla>;
     public marcas: String[];
+    public color: String;
 
     constructor(){
+        this.color = 'orange'
         this.marcas = new Array;
         this.zapatillas = [
             new Zapatilla('Reebok classic', 100, 'rojo', 'reebok', true),

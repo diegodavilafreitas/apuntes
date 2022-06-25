@@ -14,3 +14,21 @@
         > !Sin oferta¡</span>
     </li>
 </ul>   
+
+<p>El coloe de la mayoria de nuestras zapatillas es: </p>
+
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'yellow'">
+        El color predominante es el <span [ngStyle]="{'background':color}">amarillo</span>
+    </li>
+    <li *ngSwitchCase="'red'">
+        El color predominante es el <span [ngStyle]="{'background':color}">red</span>
+    </li>
+    <li *ngSwitchCase="'blue'">
+        El color predominante es el <span [ngStyle]="{'background':color}">blue</span>
+    </li>
+    <li *ngSwitchCase="'orange'">
+        El color predominante es el <span [ngStyle]="{'background':color}">orange</span>
+    </li>
+    
+</ul>
