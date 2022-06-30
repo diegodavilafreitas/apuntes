@@ -53,4 +53,9 @@ export class ZapatillasComponent implements OnInit{
         this.marcas.splice(i,1);
     }
 
+    mostrarPalabra(){
+        alert(this.miMarca)
+        this.addMarca()
+    }
+
 }
