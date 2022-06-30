@@ -19,9 +19,16 @@
 <ul>
     <li *ngFor="let zapa of zapatillas; let i = index">
         <span [ngStyle]="{'text-decoration' : !zapa.stock ? 'line-through' : 'none'}">
-            {{i+' - '+zapa.nombre}} - <strong>{{zapa.precio}}</strong>
+            {{i+' - '+zapa.nombre}} - 
+            <strong 
+            [class.altoPrecio]="zapa.precio>80"
+            [ngClass]="{
+                'fondoRojo': zapa.precio>100,
+                'subrayado': zapa.marca=='nike'
+            }"
+            >{{zapa.precio}} €</strong>
         </span>
-        <span *ngIf="zapa.precio<=100" [style.color]="zapa.precio <= 100 ? 'green' : 'transparent'"> !En Oferta¡</span>
+        <span *ngIf="zapa.precio<=100"[style.color]="zapa.precio <= 100 ? 'green' : 'transparent'"> !En Oferta¡</span>
         <span *ngIf="zapa.precio > 100" [style.color]="zapa.precio > 100 ? 'red' : 'transparent'"> !Sin oferta¡</span>
     </li>
 </ul>
