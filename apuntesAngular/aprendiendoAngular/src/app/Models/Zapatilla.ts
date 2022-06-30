@@ -20,9 +20,7 @@ export class Zapatilla{
         public marca: String,
         public stock: boolean
     ){}
-
     getMarca(){
         return this.marca
     }
-
 }

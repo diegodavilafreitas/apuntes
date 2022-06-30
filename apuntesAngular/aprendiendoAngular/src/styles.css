@@ -9,3 +9,11 @@
 .subrayado{
     text-decoration: underline black;
 }
+.appNav a{
+    margin: 0.1em;
+    padding: 0.2em;
+    background-color: rgb(20, 47, 95);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.2em;
+}

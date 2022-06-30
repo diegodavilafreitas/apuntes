@@ -1,18 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { Zapatilla } from "../Models/Zapatilla";
-
 @Component({
     selector: 'zapatillas',
     templateUrl: './zapatillas.component.html'
 })
 export class ZapatillasComponent implements OnInit{
-
     public titulo: String ='Componente zapatillas';
     public zapatillas: Array<Zapatilla>;
     public marcas: String[];
     public color: String;
     public miMarca: String;
-
     constructor(){
         this.miMarca = 'Fila'
         this.color = 'orange'
@@ -25,12 +22,10 @@ export class ZapatillasComponent implements OnInit{
             new Zapatilla('adidas loko', 50, 'blanco', 'adidas', false),
         ];
     }
-
     ngOnInit(): void {
         console.log(this.zapatillas)
         this.getMarcas();
     }
-
     getMarcas(){
         this.zapatillas.forEach(element => {
             if(!this.marcas.includes(element.marca)){
@@ -39,23 +34,18 @@ export class ZapatillasComponent implements OnInit{
         });
         console.log(this.marcas)
     }
-
     getMarca(){
         alert('La marca es: '+this.miMarca);
     }
-
     addMarca(){
         this.marcas.push(this.miMarca);
     }
-
     borrarMarca(i:number){
         //delete this.marcas[i];
         this.marcas.splice(i,1);
     }
-
     mostrarPalabra(){
         alert(this.miMarca)
         this.addMarca()
     }
-
 }
